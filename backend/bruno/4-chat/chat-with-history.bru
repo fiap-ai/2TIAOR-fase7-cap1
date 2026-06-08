@@ -1,0 +1,32 @@
+meta {
+  name: Chat — With Conversation History
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/chat
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "message": "E quais exames devo fazer?",
+    "history": [
+      {
+        "role": "user",
+        "content": "Estou sentindo dor no peito"
+      },
+      {
+        "role": "assistant",
+        "content": "Dor no peito pode ter várias causas. É importante procurar atendimento médico. Posso ajudar com mais informações."
+      }
+    ]
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.response: isDefined
+}

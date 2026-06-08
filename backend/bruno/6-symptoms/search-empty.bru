@@ -1,0 +1,17 @@
+meta {
+  name: Search Symptoms — No Results
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/symptoms/search?q=xyzinexistente
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.results: isDefined
+  res.body.count: eq 0
+}

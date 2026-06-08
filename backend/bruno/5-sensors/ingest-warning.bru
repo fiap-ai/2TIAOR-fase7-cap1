@@ -1,0 +1,25 @@
+meta {
+  name: Ingest Sensor — Warning Alert (high temp)
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/sensors
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "temperature": 37.8,
+    "heart_rate": 105,
+    "device_id": "esp32-01"
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.status: eq received
+  res.body.alert: eq WARNING
+}

@@ -1,0 +1,22 @@
+meta {
+  name: Predict — Validation Error (missing fields)
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/predict
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "patient_name": "Incomplete",
+    "idade": 55
+  }
+}
+
+assert {
+  res.status: eq 422
+}

@@ -1,0 +1,69 @@
+{
+  "BAIXO": [
+    {
+      "name": "Monitoramento de Rotina",
+      "description": "Manter acompanhamento ambulatorial padrão com checagem periódica dos sinais vitais.",
+      "priority": "BAIXA",
+      "actions": [
+        "Agendar retorno em 30 dias",
+        "Manter medicação atual",
+        "Orientar paciente sobre sinais de alerta",
+        "Registrar sinais vitais no prontuário eletrônico"
+      ]
+    }
+  ],
+  "MEDIO": [
+    {
+      "name": "Vigilância Intensificada",
+      "description": "Aumentar a frequência de monitoramento e considerar exames complementares.",
+      "priority": "MEDIA",
+      "actions": [
+        "Reduzir intervalo de monitoramento para a cada 4 horas",
+        "Solicitar eletrocardiograma (ECG) de controle",
+        "Revisar dosagem de medicação anti-hipertensiva",
+        "Notificar equipe de enfermagem para observação contínua"
+      ]
+    }
+  ],
+  "ALTO": [
+    {
+      "name": "Protocolo de Alerta Cardíaco",
+      "description": "Acionar equipe de cardiologia e preparar para intervenção rápida caso haja deterioração.",
+      "priority": "ALTA",
+      "actions": [
+        "Acionar alerta para equipe de cardiologia de plantão",
+        "Iniciar monitoramento contínuo de ECG e SpO₂",
+        "Preparar acesso venoso periférico",
+        "Manter carrinho de emergência próximo ao leito",
+        "Reavaliar paciente a cada 30 minutos"
+      ]
+    }
+  ],
+  "CRITICO": [
+    {
+      "name": "Código Vermelho — Emergência Cardíaca",
+      "description": "Ativação imediata do protocolo de emergência cardiológica com mobilização completa de recursos.",
+      "priority": "ALTA",
+      "actions": [
+        "Ativar código vermelho hospitalar",
+        "Transferir paciente para UTI Coronariana imediatamente",
+        "Administrar antiarrítmico conforme protocolo ACLS",
+        "Solicitar ecocardiograma de urgência",
+        "Notificar hemodinâmica para possível cateterismo de emergência",
+        "Acionar equipe cirúrgica em standby"
+      ]
+    },
+    {
+      "name": "Estabilização Hemodinâmica",
+      "description": "Garantir estabilidade dos parâmetros vitais enquanto a equipe de intervenção se prepara.",
+      "priority": "ALTA",
+      "actions": [
+        "Administrar oxigênio suplementar (alvo SpO₂ > 94%)",
+        "Monitorar pressão arterial invasiva",
+        "Iniciar infusão de cristaloides se hipotensão presente",
+        "Realizar gasometria arterial",
+        "Manter comunicação contínua com a central de regulação"
+      ]
+    }
+  ]
+}

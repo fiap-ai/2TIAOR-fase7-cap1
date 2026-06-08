@@ -1,0 +1,34 @@
+meta {
+  name: Predict — Low Risk Patient
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/predict
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "patient_name": "Maria Saudável",
+    "idade": 30,
+    "frequencia_cardiaca": 72,
+    "spo2": 98.5,
+    "pressao_sistolica": 115,
+    "pressao_diastolica": 75,
+    "glicemia": 85.0,
+    "carga_sistema": 20.0,
+    "disponibilidade_recursos": 90.0,
+    "historico_cardiopatia": 0
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.patient_name: eq Maria Saudável
+  res.body.risk_probability: isDefined
+  res.body.risk_class: isDefined
+  res.body.protocols: isDefined
+}

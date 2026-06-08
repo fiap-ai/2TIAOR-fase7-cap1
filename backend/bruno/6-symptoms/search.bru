@@ -1,0 +1,17 @@
+meta {
+  name: Search Symptoms
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/api/symptoms/search?q=dor no peito
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.results: isDefined
+  res.body.count: isNumber
+}

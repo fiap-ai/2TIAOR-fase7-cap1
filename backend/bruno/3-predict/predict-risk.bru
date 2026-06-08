@@ -1,0 +1,35 @@
+meta {
+  name: Predict Risk
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/predict
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "patient_name": "João Silva",
+    "idade": 55,
+    "frequencia_cardiaca": 85,
+    "spo2": 96.5,
+    "pressao_sistolica": 140,
+    "pressao_diastolica": 90,
+    "glicemia": 110.0,
+    "carga_sistema": 45.0,
+    "disponibilidade_recursos": 70.0,
+    "historico_cardiopatia": 1
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.patient_name: eq João Silva
+  res.body.risk_probability: isDefined
+  res.body.risk_class: isDefined
+  res.body.protocols: isDefined
+  res.body.recommendation_summary: isDefined
+}

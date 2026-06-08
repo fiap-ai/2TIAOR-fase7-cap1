@@ -1,0 +1,25 @@
+meta {
+  name: Ingest Sensor — Critical Alert (extreme HR)
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/api/sensors
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "temperature": 39.0,
+    "heart_rate": 35,
+    "device_id": "esp32-02"
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.status: eq received
+  res.body.alert: eq CRITICAL
+}

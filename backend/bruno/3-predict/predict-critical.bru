@@ -1,0 +1,35 @@
+meta {
+  name: Predict — Critical Risk Patient
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/predict
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "patient_name": "Carlos Emergência",
+    "idade": 75,
+    "frequencia_cardiaca": 130,
+    "spo2": 88.0,
+    "pressao_sistolica": 200,
+    "pressao_diastolica": 120,
+    "glicemia": 350.0,
+    "carga_sistema": 95.0,
+    "disponibilidade_recursos": 15.0,
+    "historico_cardiopatia": 1
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.patient_name: eq Carlos Emergência
+  res.body.risk_probability: isDefined
+  res.body.risk_class: isDefined
+  res.body.protocols: isDefined
+  res.body.recommendation_summary: isDefined
+}

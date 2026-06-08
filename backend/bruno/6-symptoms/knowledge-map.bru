@@ -1,0 +1,17 @@
+meta {
+  name: Knowledge Map
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/symptoms/knowledge
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+  res.body.entries: isDefined
+  res.body.count: isNumber
+}
