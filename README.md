@@ -77,7 +77,7 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
   - `diagram.json` — circuito Wokwi (ESP32 + DHT22 + potenciômetro + 3 LEDs + OLED SSD1306)
   - `ssd1306.py` — driver do display OLED
 
-- **docs**: documentação técnica — [diagrama de arquitetura](docs/architecture.md) (Mermaid) e [relatório técnico](docs/report.md).
+- **docs**: documentação técnica — [diagrama de arquitetura](docs/architecture.md) (Mermaid), [relatório técnico](docs/report.md) e [relatório em PDF](docs/report.pdf).
 
 - **README.md**: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 

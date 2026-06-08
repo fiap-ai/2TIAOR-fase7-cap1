@@ -85,9 +85,11 @@ Built with React Native + Expo SDK 56 + React Native Paper (Material Design 3):
 | Component | Platform | URL |
 |-----------|----------|-----|
 | Backend | Render (free tier) | https://twotiaor-fase7-cap1.onrender.com |
-| Web | Vercel | _See README.md_ |
-| Mobile | Expo EAS Build | _APK download link in README.md_ |
+| Web | Vercel | https://2-tiaor-fase7-cap1.vercel.app/ |
+| Mobile | Expo EAS Build | https://expo.dev/accounts/gabemule/projects/cardioai/builds/4f3fd8fa-5e6a-43a5-8606-1ded7d704d28 |
 | IoT | Wokwi | https://wokwi.com/projects/466225873706038273 |
+
+**Video Demo:** https://youtu.be/USCApx9ZqKM
 
 ## 9. Conclusion
 
