@@ -107,10 +107,14 @@ export function Dashboard() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {latestSensor?.alert ? (
-                <Badge variant={riskBadgeVariant(latestSensor.alert)}>
-                  {latestSensor.alert}
-                </Badge>
+              {latestSensor ? (
+                latestSensor.alert ? (
+                  <Badge variant={riskBadgeVariant(latestSensor.alert)}>
+                    {latestSensor.alert}
+                  </Badge>
+                ) : (
+                  <Badge variant="success">NORMAL</Badge>
+                )
               ) : (
                 <span className="text-muted-foreground">Sem dados</span>
               )}

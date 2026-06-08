@@ -10,6 +10,13 @@
 
 ## 2TIAOR — Fase 7, Capítulo 1
 
+<p align="center">
+  <a href="https://twotiaor-fase7-cap1.onrender.com/health"><img src="https://img.shields.io/badge/API-Render-4351e8?style=for-the-badge&logo=render&logoColor=white" alt="API on Render"></a>
+  <a href="https://2-tiaor-fase7-cap1.vercel.app/"><img src="https://img.shields.io/badge/Web-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Web on Vercel"></a>
+  <a href="https://expo.dev/accounts/gabemule/projects/cardioai/builds/4f3fd8fa-5e6a-43a5-8606-1ded7d704d28"><img src="https://img.shields.io/badge/APK-Expo_EAS-4630EB?style=for-the-badge&logo=expo&logoColor=white" alt="APK on EAS"></a>
+  <a href="https://wokwi.com/projects/466225873706038273"><img src="https://img.shields.io/badge/IoT-Wokwi-4CAF50?style=for-the-badge&logo=arduino&logoColor=white" alt="IoT on Wokwi"></a>
+</p>
+
 ## 👨‍🎓 Integrantes:
 - <a href="https://www.linkedin.com/in/gabmule/">Gabriel Mule</a> — RM 560586
 
@@ -23,8 +30,8 @@
 
 | Componente | Link |
 |-----------|------|
-| 🌐 Web Dashboard | _TODO: Vercel URL_ |
-| 📱 Mobile APK | _TODO: EAS Build URL_ |
+| 🌐 Web Dashboard | [CardioIA Web](https://2-tiaor-fase7-cap1.vercel.app/) |
+| 📱 Mobile APK | [EAS Build — CardioIA APK](https://expo.dev/accounts/gabemule/projects/cardioai/builds/4f3fd8fa-5e6a-43a5-8606-1ded7d704d28) |
 | 🔌 IoT Simulation | [Wokwi — ESP32 CardioIA](https://wokwi.com/projects/466225873706038273) |
 
 <p align="center">
@@ -70,7 +77,7 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
   - `diagram.json` — circuito Wokwi (ESP32 + DHT22 + potenciômetro + 3 LEDs + OLED SSD1306)
   - `ssd1306.py` — driver do display OLED
 
-- **docs**: documentação técnica — diagrama de arquitetura e relatório.
+- **docs**: documentação técnica — [diagrama de arquitetura](docs/architecture.md) (Mermaid) e [relatório técnico](docs/report.md).
 
 - **README.md**: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
@@ -114,14 +121,24 @@ npm run dev
 ```bash
 cd mobile
 npm install
+
+# Configurar variáveis de ambiente
+cp .env.example .env
+
+# Rodar em modo desenvolvimento
 npx expo start
+
+# Gerar APK (requer login: npx eas login)
+npx eas build -p android --profile preview
 ```
 
 ### IoT (Wokwi)
 
 Abra a [simulação no Wokwi](https://wokwi.com/projects/466225873706038273) ou use a extensão Wokwi no VS Code com o diretório `iot/`.
 
-### Variáveis de ambiente (Backend)
+### Variáveis de ambiente
+
+**Backend** (`backend/.env`):
 
 | Variável | Descrição | Default |
 |---|---|---|
@@ -129,6 +146,18 @@ Abra a [simulação no Wokwi](https://wokwi.com/projects/466225873706038273) ou 
 | `LLM_MODEL` | Modelo LLM | `openai/gpt-4o-mini` |
 | `HOST` | Host do servidor | `0.0.0.0` |
 | `PORT` | Porta do servidor | `8000` |
+
+**Web** (`web/.env`):
+
+| Variável | Descrição | Default |
+|---|---|---|
+| `VITE_API_URL` | URL base da API | `http://localhost:8000` |
+
+**Mobile** (`mobile/.env`):
+
+| Variável | Descrição | Default |
+|---|---|---|
+| `EXPO_PUBLIC_API_URL` | URL base da API | `https://twotiaor-fase7-cap1.onrender.com` |
 
 
 ## 📡 API Endpoints
@@ -157,6 +186,11 @@ Abra a [simulação no Wokwi](https://wokwi.com/projects/466225873706038273) ou 
 
 ## 🗃 Histórico de lançamentos
 
+* 1.0.0 - 08/07/2026
+    * Deploy backend no Render com integração IoT (Wokwi → Render)
+    * Web dashboard com login, predição de risco, monitoramento IoT e chat IA
+    * App mobile (Expo SDK 56 + React Native Paper) com APK via EAS Build
+    * Diagrama de arquitetura e relatório técnico em `docs/`
 * 0.1.0 - 07/07/2026
     * Backend integrador completo (FastAPI, 7 endpoints, Bruno collection)
     * Módulo IoT MicroPython (conversão do sketch.ino da Fase 3)

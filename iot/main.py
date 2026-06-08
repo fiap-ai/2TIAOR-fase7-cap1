@@ -94,8 +94,8 @@ except ImportError:
 WIFI_SSID = "Wokwi-GUEST"
 WIFI_PASSWORD = ""
 
-# Backend API
-BACKEND_URL = "http://localhost:8000/api/sensors"
+# Backend API (deployed on Render — Wokwi web can reach this URL)
+BACKEND_URL = "https://twotiaor-fase7-cap1.onrender.com/api/sensors"
 DEVICE_ID = "esp32-wokwi-01"
 
 # Sensor Pins (same GPIOs as Phase 3)
