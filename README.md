@@ -22,7 +22,7 @@
 
 ## 🎥 Vídeo Demonstração
 
-> ### **[▶️ ASSISTA AO VÍDEO DE DEMONSTRAÇÃO](#)**
+> ### **[▶️ ASSISTA AO VÍDEO DE DEMONSTRAÇÃO](https://youtu.be/USCApx9ZqKM)**
 >
 > Duração: ~5 minutos | Conteúdo: Arquitetura completa, backend, web dashboard, app mobile, simulação IoT
 
